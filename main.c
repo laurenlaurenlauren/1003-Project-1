@@ -2,12 +2,12 @@
 
 char encrypt_rotation (int rotation, r);
 int main () {
-char wowow
+char wowow;
 
 printf("enter a text:\n");
-scanf("%s", wowow)
+scanf("%s", &wowow);
 printf("enter a key:"); 
-scanf("%d", r);
+scanf("%d", &r);
 
 return 0;
 }
