@@ -17,7 +17,7 @@ int main () {
   switch(x) {
         case 1: 
         printf("enter message to encrypt:\n");
-        scanf("%char\n",message);
+        scanf("%s\n",message);
         printf("enter a key:\n");
         scanf("%d", &key);
         E_rotation (message, shift);
