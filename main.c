@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 void E_rotation (char message[], int shift);
+void D_rotation (char message[], int shift);
 
 int main () {
  
@@ -15,12 +16,20 @@ int main () {
          scanf("%d", &x);
          
   switch(x) {
-        case 1: 
+        
+   case 1: 
         printf("enter message to encrypt:\n");
         scanf("%s\n",message);
         printf("enter a key:\n");
         scanf("%d", &shift);
         E_rotation (message, shift);
+        
+    case 2: 
+        printf("enter message to decrypt:\n");
+        scanf("%s\n", message);
+        printf("enter a key");
+        scanf("%d", &shift);
+        D_rotation (message, shift);
    
    }       
 return 0;
