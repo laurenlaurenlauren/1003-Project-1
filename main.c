@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+void E_rotation (char message[], int shift);
+
 int main () {
  
   int x, value, key;
@@ -18,12 +20,21 @@ int main () {
         scanf("%char\n",message);
         printf("enter a key:\n");
         scanf("%d", &key);
-        for(value = 0; (value < 100 && message[value] != '\0'); value++)
-        message[value] = message[value] + key; //key added to ascii value, doesnt work yet
-
-      printf("Encrypted message: %s\n", message);
-      break;
-         }       
-
+        E_rotation (message, shift);
+   
+   }       
 return 0;
-}
+  }
+void E_rotation (char message[], int shift) {
+  int i = 0;
+
+  while (message[i] != '\0') {
+    if ((message[i] += shift) >= 65 && (message[i] += shift) <= 90) {
+      message[i] += (shift);
+    } else {
+      message[i] += (shift - 25); 
+    }
+    i++;
+  }
+  printf("%s", message);
+} 
