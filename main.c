@@ -7,7 +7,7 @@ int main () {
   int x, value, shift;
   char message[1024];
   
-  printf("select an option");
+  printf("select an option\n");
   printf("1: encrypt rotation\n");
   printf("2: decrypt rotation\n");
   printf("3: encrypt substitution\n");
