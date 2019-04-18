@@ -4,10 +4,10 @@ void E_rotation (char message[], int shift);
 
 int main () {
  
-  int x, value, key;
+  int x, value, shift;
   char message[1024];
   
-  Printf("select an option");
+  printf("select an option");
   printf("1: encrypt rotation\n");
   printf("2: decrypt rotation\n");
   printf("3: encrypt substitution\n");
@@ -19,7 +19,7 @@ int main () {
         printf("enter message to encrypt:\n");
         scanf("%s\n",message);
         printf("enter a key:\n");
-        scanf("%d", &key);
+        scanf("%d", &shift);
         E_rotation (message, shift);
    
    }       
