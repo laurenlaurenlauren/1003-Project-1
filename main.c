@@ -47,3 +47,17 @@ void E_rotation (char message[], int shift) {
   }
   printf("%s", message);
 } 
+void D_rotation (char message[], int shift) {
+  int i = 0;
+
+  while (message[i] != '\0') {
+    if ((message[i] - shift) >= A && (message[i] - shift) <= Z) { //ASCII value must be between A and Z
+      message[i] -= (shift); //the ascii character is now equal to its value plus the shift
+    } else {
+      message[i] -= (shift + 25); //if the value plus the shifty exceeds Z, then minus 25 to bring the number to the begining of the alphabet
+    }
+    i++;
+  }
+  printf("%s", message);
+} 
+
