@@ -13,7 +13,7 @@ int main () {
   printf("2: decrypt rotation\n");
   printf("3: encrypt substitution\n");
   printf("4: decrypt substitution\n");
-         scanf("%d", &x);
+         scanf("%d", &x); //hard coded selection menu
          
   switch(x) {
         
@@ -22,21 +22,21 @@ int main () {
         scanf("%s\n",message);
         printf("enter a key:\n");
         scanf("%d", &shift);
-        E_rotation (message, shift);
+        E_rotation (message, shift); //E_rotation function reads input and inserts into function
         
     case 2: 
         printf("enter message to decrypt:\n");
         scanf("%s\n", message);
         printf("enter a key");
         scanf("%d", &shift);
-        D_rotation (message, shift);
+        D_rotation (message, shift); //D_rotation function reads input and inserts into function
    
    case 3:
-       char origltr [27] = ABCDEFGHIJKLMNOPQRSTUVWXYZ;
-       char subltr [27];
-       printf ("enter a key");
-       scanf ("%s\n", subltr);
-      { message[i] = subltr[message[i] – ‘A’];};
+       char origltr [27] = ABCDEFGHIJKLMNOPQRSTUVWXYZ; //original alphabet
+       char subltr [27]; //substituted alphabet
+       printf ("enter a key"); //enter capital all letters, no spaces
+       scanf ("%s\n", subltr); 
+      { message[i] = subltr[message[i] – ‘A’];}; 
       printf ("encrypted message is: %s\n", message);
        
    
