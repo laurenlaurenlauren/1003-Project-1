@@ -31,6 +31,15 @@ int main () {
         scanf("%d", &shift);
         D_rotation (message, shift);
    
+   case 3:
+       char origltr [27] = ABCDEFGHIJKLMNOPQRSTUVWXYZ;
+       char subltr [27];
+       printf ("enter a key");
+       scanf ("%s\n", subltr);
+      { message[i] = subltr[message[i] – ‘A’];};
+      printf ("encrypted message is: %s\n", message);
+       
+   
    }       
 return 0;
   }
