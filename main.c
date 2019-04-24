@@ -7,6 +7,9 @@ int main () {
  
   int x, value, shift;
   char message[1024];
+ 
+ printf("enter a message:");
+ scanf("%s", message);
   
   printf("select an option\n");
   printf("1: encrypt rotation\n");
@@ -18,15 +21,11 @@ int main () {
   switch(x) {
         
    case 1: 
-        printf("enter message to encrypt:\n");
-        scanf("%s\n",message);
         printf("enter a key:\n");
         scanf("%d", &shift);
         E_rotation (message, shift); //E_rotation function reads input and inserts into function
         
     case 2: 
-        printf("enter message to decrypt:\n");
-        scanf("%s\n", message);
         printf("enter a key");
         scanf("%d", &shift);
         D_rotation (message, shift); //D_rotation function reads input and inserts into function
