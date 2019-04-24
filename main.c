@@ -38,6 +38,15 @@ int main () {
        scanf ("%s\n", subltr); 
       { message[i] = subltr[message[i] – ‘A’];}; 
       printf ("encrypted message is: %s\n", message);
+    
+   case 4:
+       char origltr [27] = ABCDEFGHIJKLMNOPQRSTUVWXYZ; //original alphabet
+       char subltr [27]; //substituted alphabet
+       char * ltr = '\0'
+       ltr = strchr(message[i], subltr);
+       (u |= NULL) { message[i] = ‘A’ + (u – subltr);
+       printf("decrypted message is: %s\n", message);
+    
        
    
    }       
