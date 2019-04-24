@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 void E_rotation (char message[], int shift);
 void D_rotation (char message[], int shift);
@@ -7,6 +8,8 @@ int main () {
  
   int x, value, shift;
   char message[1024];
+ char subltr [27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+ char origltr [27];
  
  printf("enter a message:");
  scanf("%s", message);
@@ -31,26 +34,20 @@ int main () {
         D_rotation (message, shift); //D_rotation function reads input and inserts into function
    
    case 3:
-       char origltr [27] = ABCDEFGHIJKLMNOPQRSTUVWXYZ; //original alphabet
-       char subltr [27]; //substituted alphabet
        printf ("enter a key"); //enter capital all letters, no spaces
        scanf ("%s\n", subltr); 
       { message[i] = subltr[message[i] – ‘A’];}; 
       printf ("encrypted message is: %s\n", message);
     
    case 4:
-       char origltr [27] = ABCDEFGHIJKLMNOPQRSTUVWXYZ; //original alphabet
-       char subltr [27]; //substituted alphabet
-       char * ltr = '\0'
-       ltr = strchr(message[i], subltr);
-       (u |= NULL) { message[i] = ‘A’ + (u – subltr);
-       printf("decrypted message is: %s\n", message);
-    
-       
-   
-   }       
+   Int j = 0;
+   for (j = 0; j < 26; j++) {  
+  (message[i] == subltr[j])
+  { message[i] = ‘A’ + j; break; }
+  }       
 return 0;
   }
+ 
 void E_rotation (char message[], int shift) {
   int i = 0;
 
