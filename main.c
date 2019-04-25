@@ -2,18 +2,17 @@
 #include <string.h>
 #include <stdlib.h>
 
-void E_rotation (char message[], int shift);
-void D_rotation (char message[], int shift);
+void E_rotation (char message[], int shift); //function for encrypting with rotation cipher
+void D_rotation (char message[], int shift); //function for decrypting with rotation cipher
+void E_substitution (void); //function for encrypting with substitution cipher
 
 int main () {
  
   int x, value, shift;
   char message[1024];
- char subltr [27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
- char origltr [27];
  
- printf("enter a message:"); //all capitals
- scanf("%s", message);
+ printf("enter a message:"); //enter in all capitals
+ scanf("%s", message); //scans message to be implemented in any function
   
   printf("select an option\n");
   printf("1: encrypt rotation\n");
@@ -27,18 +26,15 @@ int main () {
    case 1: 
         printf("enter a key:\n");
         scanf("%d", &shift);
-        E_rotation (message, shift); //E_rotation function reads input and inserts into function
+        E_rotation (message, shift); //E_rotation function reads input and inserts into E_rotation function
         
     case 2: 
         printf("enter a key");
         scanf("%d", &shift);
-        D_rotation (message, shift); //D_rotation function reads input and inserts into function
+        D_rotation (message, shift); //D_rotation function reads input and inserts into D_rotation function
    
    case 3:
-       printf ("enter a key"); //enter capital all letters, no spaces
-       scanf ("%s\n", subltr); 
-      { message[i] = subltr[message[i] – ‘A’];}; 
-      printf ("encrypted message is: %s\n", message);
+       E_substitution; //E_substitution function implements
     
    case 4:
    Int j = 0;
@@ -49,19 +45,24 @@ int main () {
 return 0;
   }
  
+ 
+ /* Encryption of message using rotation cipher given shift value */
+ 
 void E_rotation (char message[], int shift) {
   int i = 0;
 
-  while (message[i] != '\0') {
+  while (message[i] != '\0') { 
     if ((message[i] + shift) >= 65 && (message[i] + shift) <= 90) {
       message[i] += (shift);
     } else {
       message[i] += (shift - 25); 
     }
-    i++;
+    i++; //reads each letter as ascii value between 65 and 90, and adds shift amount to each, unless it exceeds 90 in which case 25 is subtracted.
   }
-  printf("%s", message);
+  printf("%s", message); //prints new ascii character
 } 
+ /* Decryption of message using rotation cipher given shift value*/ 
+ 
 void D_rotation (char message[], int shift) {
   int i = 0;
 
@@ -71,7 +72,22 @@ void D_rotation (char message[], int shift) {
     } else {
       message[i] -= (shift + 25); 
     }
-    i++;
+    i++; //reads each letter and subtracts number of shifts from ascii value, if it is below 65, 25 is added to the value
   }
-  printf("%s", message);
+  printf("%s", message); //prints new ascii characters
 } 
+ /* Encryption using substitution ciphers, given alphabet substitution */
+ 
+ void E_substitution () { 
+     char message [1024];
+     const char origltr [27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     char subltr [27];
+     int i;
+     printf ("enter new alphabet:\n");
+     scanf("%s", subltr);
+     for (i=0; i<26; i++); {
+         if (message[i] == origltr[i]) {
+             printf("%s\n", subltr);
+         }
+     }
+ }
