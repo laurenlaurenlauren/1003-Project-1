@@ -34,7 +34,7 @@ int main () {
         D_rotation (message, shift); //D_rotation function reads input and inserts into D_rotation function
    
    case 3:
-       E_substitution; //E_substitution function implements
+       E_substitution (); //E_substitution function implements
     
    case 4:
    Int j = 0;
