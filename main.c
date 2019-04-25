@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 void E_rotation (char message[], int shift);
 void D_rotation (char message[], int shift);
