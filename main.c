@@ -79,13 +79,15 @@ void D_rotation (char message[], int shift) {
  /* Encryption using substitution ciphers, given alphabet substitution */
  
  void E_substitution () { 
-     char message [1024];
      const char origltr [27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
      char subltr [27];
-     int i;
+     int i, k;
      printf ("enter new alphabet:\n");
      scanf("%s", subltr);
-     for (i=0; i<26; i++); {
+     for (k=0, message[k] != '\0'; k++); {
+      if (message[k] < 65 && message[k] > 90);
+       printf("%s", &message[k]);
+      for (i=0; i<26; i++); {
          if (message[i] == origltr[i]) {
              printf("%s\n", subltr);
          }
