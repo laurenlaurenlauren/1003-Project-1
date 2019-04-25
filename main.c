@@ -11,7 +11,7 @@ int main () {
  char subltr [27] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
  char origltr [27];
  
- printf("enter a message:");
+ printf("enter a message:"); //all capitals
  scanf("%s", message);
   
   printf("select an option\n");
