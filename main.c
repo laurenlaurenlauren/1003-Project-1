@@ -85,11 +85,9 @@ void D_rotation (char message[], int shift) {
      printf ("enter new alphabet:\n");
      scanf("%s", subltr);
      for (k=0, message[k] != '\0'; k++); {
-      if (message[k] < 65 && message[k] > 90);
-       printf("%s", &message[k]);
       for (i=0; i<26; i++); {
          if (message[i] == origltr[i]) {
-             printf("%s\n", subltr);
+             printf("%c\n", subltr[i]);
          }
      }
  }
