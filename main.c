@@ -33,7 +33,7 @@ int main () {
         break;
         
         case 4:
-        D_substitution; //decrypt substitution function
+        D_substitution (); //decrypt substitution function
         return 0;
         
     }
@@ -83,7 +83,7 @@ int main () {
     char message [1024], subltr[27];
 	const char origltr[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int k, i;
-	printf ("enter a message"); //enter a message in all capitals
+	printf ("enter a message\n"); //enter a message in all capitals
 	scanf("%s", message);
 	printf ("enter new alphabet:\n"); //enter a substituted alphabet, no spaces, all capitals, 26 characters
     scanf("%s", subltr);
@@ -91,6 +91,24 @@ int main () {
         for(i=0; i<26; i++){
             if (message[k] == origltr[i]){ //then each subsequent letter in the original alphabet is compared to its corresponding letter in the substitute alphabet
                 printf("%c", subltr[i]); //the substitute alphabets corresponding letters to that in the message are printed
+            }
+        }
+    }
+ }
+ 
+/* decryption substitution function */
+void D_substitution () {
+    char message [1024], subltr[27];
+	const char origltr[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	int k, i;
+	printf ("enter a message\n"); //enter a message in all capitals
+	scanf("%s", message);
+	printf ("enter new alphabet:\n"); //enter a substituted alphabet, no spaces, all capitals, 26 characters
+    scanf("%s", subltr);
+     for(k=0; message[k]!='\0'; k++){ //this loop tests each letter of the message and equals that to the original alphabet
+        for(i=0; i<26; i++){
+            if (message[k] == subltr[i]){ //then each subsequent letter in the original alphabet is compared to its corresponding letter in the substitute alphabet
+                printf("%c", origltr[i]); //the substitute alphabets corresponding letters to that in the message are printed
             }
         }
     }
