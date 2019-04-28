@@ -83,10 +83,10 @@ int main () {
     char message [1024], subltr[27];
 	const char origltr[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int k, i;
-	printf ("enter a message\n"); //enter a message in all capitals
-	scanf("%[^\n]s", message);
-	printf ("enter new alphabet:\n"); //enter a substituted alphabet, no spaces, all capitals, 26 characters
-    scanf("%s", subltr);
+	printf("Enter message: ");
+	scanf(" %[^\n]s", message);
+	printf("enter new alphabet: ");
+	scanf("%s", subltr);
      for(k=0; message[k]!='\0'; k++){ //this loop tests each letter of the message and equals that to the original alphabet
        if(message[k] < 'A' || message[k] > 'Z') {
 	       printf("%c", message[k]
