@@ -84,11 +84,13 @@ int main () {
 	const char origltr[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	int k, i;
 	printf ("enter a message\n"); //enter a message in all capitals
-	scanf("%s", message);
+	scanf("%[^\n]s", message);
 	printf ("enter new alphabet:\n"); //enter a substituted alphabet, no spaces, all capitals, 26 characters
     scanf("%s", subltr);
      for(k=0; message[k]!='\0'; k++){ //this loop tests each letter of the message and equals that to the original alphabet
-        for(i=0; i<26; i++){
+       if(message[k] < 'A' || message[k] > 'Z') {
+	       printf("%c", message[k]
+	       for(i=0; i<26; i++){
             if (message[k] == origltr[i]){ //then each subsequent letter in the original alphabet is compared to its corresponding letter in the substitute alphabet
                 printf("%c", subltr[i]); //the substitute alphabets corresponding letters to that in the message are printed
             }
