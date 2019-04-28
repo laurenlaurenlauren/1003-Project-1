@@ -43,12 +43,14 @@ int main () {
 
  void E_rotation (char message [], int shift) {
      int i = 0;
-     printf("enter a message:\n"); //enter a message in all capitals
-    scanf("%s", message);
+      printf ("enter a message\n"); //enter a message in all capitals
+	scanf(" %[^\n]s", message);
     printf("enter a key\n"); //number of shifts in the alphabet used to encrypt
         scanf("%d", &shift);
      while (message[i] != '\0') { //this loop adds the shift amount to each letter whilst that amount is between A and Z
-         if ((message[i] + shift) >= 65 && (message[i] + shift) <= 90){
+         if (message[i] < 'A' || message[i] > 'Z') {
+             printf("%c", message[i]);}
+	     if ((message[i] + shift) >= 65 && (message[i] + shift) <= 90){
              message[i] += (shift);
          } else {
              message[i] += (shift - 25); //if the amount exceeds Z, 25 in subtracted to bring the answer back to the begining of the alphabet
@@ -62,12 +64,14 @@ int main () {
  
  void D_rotation (char message [], int shift) {
      int i = 0;
-     printf("enter a message:\n"); //enter message in all capitals
-     scanf("%s", message);
-       printf("enter a key\n"); //amount of shifts
+     printf ("enter a message\n"); //enter a message in all capitals
+	scanf(" %[^\n]s", message);
+    printf("enter a key\n"); //number of shifts in the alphabet used to encrypt
         scanf("%d", &shift);
       while (message[i] != '\0') { //this loop subtracts the shift amount from each letter of the message whilst that mount is between A and Z
-         if ((message[i] - shift) >= 65 && (message[i] - shift) <= 90){
+         if (message[i] < 'A' || message[i] > 'Z') {
+             printf("%c", message[i]);}
+	      if ((message[i] - shift) >= 65 && (message[i] - shift) <= 90){
              message[i] -= (shift);
          } else {
              message[i] -= (shift + 25); //if the amount subceeds A then 25 is added to bring the answer to the end of the alphabet
