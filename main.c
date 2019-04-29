@@ -6,6 +6,7 @@ void D_rotation (char message [], int shift); //function to decrypt using rotati
 void E_substitution (void); //function to encrypt using substitution cipher
 void D_substitution (void); //function to decrypt using substitution cipher
 /*all of the above functions requre a given key*/
+void D_rotation_nokey (void); //function to decrypt rotation cipher with no key
 
 int main () {
     int x, value, shift;
@@ -34,7 +35,11 @@ int main () {
         
         case 4:
         D_substitution (); //decrypt substitution function
-        return 0;
+        break;
+		    
+	case 5:	    
+	D_rotation_nokey (); //decrypt rotation with no key function
+	break;	    
         
     }
 }
@@ -119,5 +124,27 @@ void D_substitution () {
         }
     }
  }
-    
+ /* decryption rotation with no key */
+void D_rotation_nokey () {
+     int i = 0, shift = 0;
+     int shiftnm1 = 1;
+     char message [1024];
+     printf("enter a message:\n"); //enter message in all capitals
+     scanf("%s", message);
+     while (shift <26); {
+      while (message[i] != '\0') { //this loop subtracts the shift amount from each letter of the message whilst that mount is between A and Z
+         if ((message[i] - shift) >= 65 && (message[i] - shift) <= 90){
+             message[i] -= (shift);
+         } else {
+             message[i] -= (shift + 25); //if the amount subceeds A then 25 is added to bring the answer to the end of the alphabet
+         }
+         i++;
+      }
+         printf("%s\n", message); //prints decrypted message
+         shift = shiftnm1;
+         shiftnm1++;
+      
+     }
+ }
+ 
    
